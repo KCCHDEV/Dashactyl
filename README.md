@@ -10,3 +10,4 @@
  
 หน้าที่แปลภาษาเป็นภาษาไทย
 - [x] admin.ejs
+- [x] create_server.ejs
