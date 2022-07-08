@@ -6,4 +6,4 @@
  - Login with discord
  - AFK Page
  - Admin Panel
-
+ - แปลภาษาเป็นภาษาไทย
