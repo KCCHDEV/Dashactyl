@@ -1,4 +1,4 @@
-# LunaDash
+# 𝗟𝘂𝗻𝗮𝗦𝗲𝗿𝘃𝗲𝗿ᴾᴿᴼ dashboard
 ### Power By Dashactyl
 
 
