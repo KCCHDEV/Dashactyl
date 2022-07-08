@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashactyl (Corona Theme) - Acktar#6724</title>
+    <title>𝗟𝘂𝗻𝗮𝗦𝗲𝗿𝘃𝗲𝗿ᴾᴿᴼ dashboard</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -38,7 +38,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-bank"></i>
               </span>
-              <span class="menu-title">Home</span>
+              <span class="menu-title">หน้าหลัก</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -46,7 +46,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Deploy Server</span>
+              <span class="menu-title">สร้างเซิร์ฟเวอร์</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -54,18 +54,18 @@
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title" data-bs-toggle="modal" data-bs-target="#modal-default">Login Credentials</span>
+              <span class="menu-title" data-bs-toggle="modal" data-bs-target="#modal-default">ข้อมูลเข้าสู่ระบบ</span>
             </a>
           </li>
           <li class="nav-item nav-category">
-            <span class="nav-link">More Resources</span>
+            <span class="nav-link">เพิ่มทรัพยากร</span>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="/afk">
               <span class="menu-icon">
                 <i class="mdi mdi-cast-connected"></i>
               </span>
-              <span class="menu-title">AFK Portal</span>
+              <span class="menu-title">AFK เหรียญ</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -73,7 +73,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-dice-6"></i>
               </span>
-              <span class="menu-title" data-bs-toggle="modal" data-bs-target="#modal-redeem">Redeem Coupons</span>
+              <span class="menu-title" data-bs-toggle="modal" data-bs-target="#modal-redeem">แลกคูปอง</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -81,19 +81,19 @@
               <span class="menu-icon">
                 <i class="mdi mdi-credit-card"></i>
               </span>
-              <span class="menu-title">Buy Extra Resources</span>
+              <span class="menu-title">ซื้อทรัพยากรเพิ่มเติม</span>
             </a>
           </li>
           <% if (data.panelinfo.root_admin) { %>
             <li class="nav-item nav-category">
-             <span class="nav-link">Administrator</span>
+             <span class="nav-link">ผู้ดูแลระบบ</span>
            </li>
            <li class="nav-item menu-items">
              <a class="nav-link" href="/admin">
                <span class="menu-icon">
                  <i class="mdi mdi-cast-connected"></i>
                </span>
-               <span class="menu-title">Admin Panel</span>
+               <span class="menu-title"แผงจัดการสำหรับผู้ดูแลระบบ</span>
              </a>
            </li>
            <% } %>
@@ -104,16 +104,16 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="h6 modal-title">Your Panel Credentials</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h2 class="h6 modal-title">ข้อมูลรับรองแผงของคุณ</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ปิด"></button>
             </div>
             <div class="modal-body">
               <p><b>Username:</b> <%= data.panelinfo.username %></p>
               <p><b>Email:</b> <%= data.panelinfo.email %></p>
-              <p><b>Control Panel:</b> <a href="<%= settings.pterodactyl.domain %>">Click me</a></p>
+              <p><b>Control Panel:</b> <a href="<%= settings.pterodactyl.domain %>">คลิกที่นี่</a></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-light btn-fw" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-light btn-fw" data-bs-dismiss="modal">ปิด</button>
               <form action="/accounts/regenerate_password" method="POST">
                 <input type="submit" class="btn btn-primary btn-fw" value="Regenerate Password">
               </form>
@@ -128,15 +128,15 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h2 class="h6 modal-title">Redeem a Coupon</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h2 class="h6 modal-title">แลกคูปอง</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ปิด"></button>
           </div>
           <form action="/earn/redeem_coupon" method="POST">
           <div class="modal-body">
              <!-- Form -->
              <div class="mb-3">
               <div class="input-group">
-                  <input type="text" class="form-control" id="code" name="code" placeholder="Enter your Coupon Code here" aria-label="Enter your Coupon Code here">
+                  <input type="text" class="form-control" id="code" name="code" placeholder="Enter your Coupon Code here" aria-label="ใส่รหัสคูปองของคุณที่นี่">
                   <span class="input-group-text" id="basic-addon2">
                     <i class="mdi mdi-gift"></i>
                   </span>
@@ -145,7 +145,7 @@
           <!-- End of Form -->
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-light btn-fw" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-light btn-fw" data-bs-dismiss="modal">ปิด</button>
               <input type="submit" class="btn btn-primary btn-fw" value="Redeem Code">
             </form>
           </div>
@@ -184,8 +184,8 @@
                       </div>
                     </div>
                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
-                      <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
+                      <p class="preview-subject mb-1">กิจกรรมวันนี้</p>
+                      <p class="text-muted ellipsis mb-0"> แค่เตือนว่าวันนี้มีงาน</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -197,7 +197,7 @@
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject mb-1">Settings</p>
-                      <p class="text-muted ellipsis mb-0"> Update dashboard </p>
+                      <p class="text-muted ellipsis mb-0">อัพเดทแดชบอร์ด</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -208,12 +208,12 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0"> New admin wow! </p>
+                      <p class="preview-subject mb-1">เปิดตัวผู้ดูแลระบบ</p>
+                      <p class="text-muted ellipsis mb-0">แอดมินใหม่ ว้าว!</p>
                     </div>
                   </a> -->
                   <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
+                  <p class="p-3 mb-0 text-center">ดูการแจ้งเตือนทั้งหมด</p>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -225,7 +225,7 @@
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                  <h6 class="p-3 mb-0">Profile</h6>
+                  <h6 class="p-3 mb-0">โปรไฟล์/h6>
                   <div class="dropdown-divider"></div>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
@@ -235,7 +235,7 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1" href="/accounts/logout">Log out</p>
+                      <p class="preview-subject mb-1" href="/accounts/logout">ออกจากระบบ</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -259,12 +259,12 @@
                         <img src="assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
                       </div>
                       <div class="col-5 col-sm-7 col-xl-8 p-0">
-                        <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-                        <p class="mb-0 font-weight-normal d-none d-sm-block">Join my Discord server!</p>
+                        <h4 class="mb-1 mb-sm-0">ต้องการคุณสมบัติเพิ่มเติมหรือไม่?</h4>
+                        <p class="mb-0 font-weight-normal d-none d-sm-block">เข้าร่วมเซิร์ฟเวอร์ Discord ของฉัน!</p>
                       </div>
                       <div class="col-3 col-sm-2 col-xl-2 ps-0 text-center">
                         <span>
-                          <a href="https://discord.gg/McFr2jwNSE" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">JOIN NOW</a>
+                          <a href="https://discord.gg/9uaCXkVP43" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">เข้าร่วมทันที</a>
                         </span>
                       </div>
                     </div>
@@ -276,17 +276,17 @@
               <% if (variables) { %>
                 <% if (variables.error && status_replies.error[variables.error]) { %>
                   <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">Oops!</h4>
+                    <h4 class="alert-heading">อ๊ะ!</h4>
                     <p><%- eval(`\`${status_replies.error[variables.error]}\``) %></p>
                     </div>
                  <% } else if (variables.success && status_replies.success[variables.success]) { %>
                   <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Well done!</h4>
+                    <h4 class="alert-heading">ทำได้ดี!</h4>
                     <p><%- eval(`\`${status_replies.success[variables.success]}\``) %></p>
                     </div>
                     <% } else { %>
                       <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">Well done!</h4>
+                        <h4 class="alert-heading">ทำได้ดี!!</h4>
                         <p><%= JSON.stringify(variables) %></p>
                         </div>
                 <% } %>
@@ -297,7 +297,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">Memory</h3>
+                          <h3 class="mb-0">หน่วยความจำ</h3>
                         </div>
                       </div>
                     </div>
@@ -311,7 +311,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">Disk</h3>
+                          <h3 class="mb-0">ดิสก์</h3>
                         </div>
                       </div>
                     </div>
@@ -325,7 +325,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">CPU</h3>
+                          <h3 class="mb-0">ซีพียู</h3>
                         </div>
                       </div>
                     </div>
@@ -339,7 +339,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">Package</h3>
+                          <h3 class="mb-0">แพ็กเกจ</h3>
                         </div>
                       </div>
                     </div>
@@ -352,29 +352,29 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h3><center><b>Deploy a new server</b></center></h3>
+                  <h3><center><b>สร้างเซิฟเวอร์ใหม่</b></center></h3>
                   <hr>
-                  <p><b><center>Free nodes require you to pay <%= settings.renewal.renew_fee %> coins to create a server, and require you to renew the server every 2 weeks.</center></b></p>
+                  <p><b><center>โหนดฟรีต้องการให้คุณจ่าย <%= settings.renewal.renew_fee %> เหรียญเพื่อสร้างเซิร์ฟเวอร์ และกำหนดให้คุณต้องต่ออายุเซิร์ฟเวอร์ทุก 2 สัปดาห์</center></b></p>
                    <hr>
                   <form action="/servers/create" method="POST" class="create_server">
                     <div class="form-group">
-                      <label for="name">Server Name</label>
+                      <label for="name">ชื่อเซิร์ฟเวอร์</label>
                       <input type="text" class="form-control" name="name" placeholder="NObody loves me:( wanna be friends? - Acktar">
                     </div>
                     <div class="form-group">
-                      <label for="memory">Ram Allocated</label>
+                      <label for="memory">รามจัดสรร</label>
                       <input type="text" class="form-control"name="memory" placeholder="<%= total.memory - current.memory %> mb left" aria-label="<%= total.memory - current.memory %>">
                     </div>
                     <div class="form-group">
-                      <label for="disk">Disk Allocated</label>
+                      <label for="disk">จัดสรรดิสก์แล้ว</label>
                       <input type="text" class="form-control" name="disk" placeholder="<%= total.disk - current.disk %> mb left" aria-label="<%= total.disk - current.disk %>">
                     </div>
                     <div class="form-group">
-                      <label for="cpu">CPU Allocated</label>
+                      <label for="cpu">จัดสรร CPU</label>
                       <input type="text" class="form-control" name="cpu" placeholder="<%= total.cpu - current.cpu %> % left" aria-label="<%= total.cpu - current.cpu %>">
                     </div>
                     <div class="form-group">
-                      <label for="location">Server Location</label>
+                      <label for="location">ตำแหน่งเซิร์ฟเวอร์</label>
                       <select class="form-control"  id="location" name="location" aria-label="location">
                         <% for (let [name, value] of Object.entries(settings.locations).filter(loc => loc[1].enabled && (loc[1].package ? loc[1].package.includes(package.id) : true))) { %>
                           <option value="<%= name %>"><%= value.name %></option>
@@ -382,15 +382,15 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="egg">Server Engine</label>
+                      <label for="egg">เครื่องยนต์เซิร์ฟเวอร์</label>
                       <select class="form-control"  id="egg" name="egg" aria-label="egg">
                         <% for (let [name, value] of Object.entries(settings.eggs)) { %>
                           <option value="<%= name %>"><%= value.display %></option>
                           <% } %>
                       </select>
                     </div>
-                    <button type="submit" class="btn btn-primary me-2" onclick="this.disabled = true">Continue</button>
-                    <button class="btn btn-dark">Cancel</button>
+                    <button type="submit" class="btn btn-primary me-2" onclick="this.disabled = true">ดำเนินการต่อ</button>
+                    <button class="btn btn-dark">ยกเลิก</button>
                   </form>
                 </div>
               </div>
@@ -399,8 +399,7 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ACKTAR??</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Join my frickin <a href="https://discord.gg/McFr2jwNSE" target="_blank">Discord Server</a></span>
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2022 By 𝗟𝘂𝗻𝗮𝗦𝗲𝗿𝘃𝗲𝗿ᴾᴿᴼ </span>
             </div>
           </footer>
           <!-- partial -->
