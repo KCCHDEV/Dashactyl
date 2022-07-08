@@ -7,4 +7,6 @@
  - AFK Page
  - Admin Panel
  - แปลภาษาเป็นภาษาไทย
- [/] admin.ejs
+ 
+หน้าที่แปลภาษาเป็นภาษาไทย
+- [x] admin.ejs
