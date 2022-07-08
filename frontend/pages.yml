@@ -31,7 +31,7 @@ pages:
     permission: 1 # 0 = anyone, 1 = must be logged in, 2 = administrator
     no_permission_redirect: /accounts/login
 
-  servers/new:
+  deploy:
     file: create_server.ejs
     permission: 1
   servers/modify:
@@ -46,7 +46,7 @@ pages:
     file: earn redeem.ejs
     permission: 1
 
-  earn/afk:
+  afk:
     file: earn afk.ejs
     permission: 1
     no_permission_redirect: /accounts/login
@@ -136,7 +136,7 @@ redirectactions:
       path: "/store"
       error: "CANNOT_AFFORD_RESOURCE"
     boughtresources:
-      path: "/store"
+      path: "/dashboard"
       success: "BOUGHT_RESOURCES"
   
   create_server:
@@ -144,52 +144,52 @@ redirectactions:
       path: "/"
       error: "NOTLOGGEDIN"
     exceedsserverplan:
-      path: "/servers/new"
+      path: "/deploy"
       error: "EXCEEDS_SERVER_PLAN"
     namemustbeastring:
-      path: "/servers/new"
+      path: "/deploy"
       error: "SERVER_NAME_MUST_BE_A_STRING"
     nameistooshort:
-      path: "/servers/new"
+      path: "/deploy"
       error: "SERVER_NAME_IS_TOO_SHORT"
     nameistoolong:
-      path: "/servers/new"
+      path: "/deploy"
       error: "SERVER_NAME_IS_TOO_LONG"
     locationmustbeastring:
-      path: "/servers/new"
+      path: "/deploy"
       error: "LOCATION_MUST_BE_A_STRING"
     invalidlocation:
-      path: "/servers/new"
+      path: "/deploy"
       error: "INVALID_LOCATION"
     locationdisabled:
-      path: "/servers/new"
+      path: "/deploy"
       error: "LOCATION_DISABLED"
     lockedlocationfrompackage:
-      path: "/servers/new"
+      path: "/deploy"
       error: "NO_ACCESS_TO_LOCATION"
     eggmustbeastring:
-      path: "/servers/new"
+      path: "/deploy"
       error: "EGG_MUST_BE_A_STRING"
     invalidegg:
-      path: "/servers/new"
+      path: "/deploy"
       error: "INVALID_EGG"
     invalidresources:
-      path: "/servers/new"
+      path: "/deploy"
       error: "INVALID_RESOURCES"
     resourcesexceedplan:
-      path: "/servers/new"
+      path: "/deploy"
       error: "RESOURCES_EXCEED_PLAN"
     toolittleresources:
-      path: "/servers/new"
+      path: "/deploy"
       error: "TOO_LITTLE_RESOURCES"
     toomanyresources:
-      path: "/servers/new"
+      path: "/deploy"
       error: "TOO_MANY_RESOURCES"
     insufficientcoins:
-      path: "/servers/new"
+      path: "/deploy"
       error: "INSUFFICIENT_COINS"
     erroroncreation:
-      path: "/servers/new"
+      path: "/deploy"
       error: "ERROR_ON_CREATION"
     createdserver:
       path: "/dashboard"
@@ -292,14 +292,14 @@ redirectactions:
       path: "/"
       error: "NOTLOGGEDIN"
     missingcouponcode:
-      path: "/earn/redeem"
+      path: "/dashboard"
       error: "MISSINGCOUPONCODE"
     zerocharactercodesareinvalid:
-      path: "/earn/redeem"
+      path: "/dashboard"
       error: "INVALIDCOUPONCODE"
     invalidcouponcode:
-      path: "/earn/redeem"
+      path: "/dashboard"
       error: "INVALIDCOUPONCODE"
     successfullyclaimedcoupon:
-      path: "/earn/redeem"
+      path: "/dashboard"
       success: "CLAIMEDCOUPON"

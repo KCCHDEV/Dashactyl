@@ -89,20 +89,20 @@ eggs: # These are the eggs servers can be created with.
         backups: 1
 
 packages: # These are packages. They are organized categories on how much resources you would give to anyone with this package.
-  default: "default"
+  default: "FREE"
   list:
     default:
       display: "The package name."
-      memory: 1024
-      disk: 1024
-      cpu: 100
+      memory: 128
+      disk: 512
+      cpu: 25
       servers: 1
     pro:
       display: "Pro Package"
-      memory: 2048
+      memory: 1024
       disk: 2048
-      cpu: 200
-      servers: 2
+      cpu: 100
+      servers: 5
 
 store: # This is the store options.
   # 'enabled' is an option, which toggles if you can buy a single type of resource of.
@@ -110,23 +110,23 @@ store: # This is the store options.
 
   memory:
     enabled: true
-    cost: 10
-    per: 10
+    cost: 250
+    per: 64
 
   disk:
     enabled: true
-    cost: 10
-    per: 10
+    cost: 150
+    per: 128
 
   cpu:
     enabled: true
-    cost: 10
+    cost: 250
     per: 10
 
   servers:
     enabled: true
     cost: 10
-    per: 10
+    per: 1
 
 afk:
   domain_lock:
