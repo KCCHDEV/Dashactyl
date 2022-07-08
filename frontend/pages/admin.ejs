@@ -1,99 +1,99 @@
-<h1>Administrator Options</h1>
+<h1>ตัวเลือกผู้ดูแลระบบ</h1>
 
-<h3>User Info</h3>
+<h3>ข้อมูลผู้ใช้</h3>
 <p>
-    <label>Discord ID:</label>
+    <label>ไอดีดิสคอร์ด:</label>
     <input id="userinfo_id"><br>
-    <button onclick="asyncAlert(userInfo(document.getElementById('userinfo_id').value))">Get</button>
-    <button onclick="asyncAlert(blacklistUser(document.getElementById('userinfo_id').value))">Blacklist</button>
-    <button onclick="asyncAlert(unblacklistUser(document.getElementById('userinfo_id').value))">Unblacklist</button>
+    <button onclick="asyncAlert(userInfo(document.getElementById('userinfo_id').value))">รับ</button>
+    <button onclick="asyncAlert(blacklistUser(document.getElementById('userinfo_id').value))"บัญชีดำ</button>
+    <button onclick="asyncAlert(unblacklistUser(document.getElementById('userinfo_id').value))">ยกเลิกบัญชีดำ</button>
 </p>
 
-<h3>Set coins</h3>
+<h3>ตั้งค่าเหรียญ</h3>
 <p>
-    <label>Discord ID:</label>
+    <label>ไอดีดิสคอร์ด:</label>
     <input id="setcoins_id">
-    <label>Coins:</label>
+    <label>เหรียญ:</label>
      <input id="setcoins_coins"><br>
-    <button onclick="asyncAlert(setCoins(document.getElementById('setcoins_id').value, parseFloat(document.getElementById('setcoins_coins').value), true))">Add</button>
-    <button onclick="asyncAlert(setCoins(document.getElementById('setcoins_id').value, parseFloat(document.getElementById('setcoins_coins').value)))">Set</button>
+    <button onclick="asyncAlert(setCoins(document.getElementById('setcoins_id').value, parseFloat(document.getElementById('setcoins_coins').value), true))">เพิ่ม</button>
+    <button onclick="asyncAlert(setCoins(document.getElementById('setcoins_id').value, parseFloat(document.getElementById('setcoins_coins').value)))">ตั้งค่า</button>
 </p>
 
-<h3>Set package</h3>
+<h3>ตั้งค่าแพ็คเกจ</h3>
 <p>
-    <label>Discord ID:</label>
+    <label>ไอดีดิสคอร์ด:</label>
     <input id="setpackage_id">
-    <label>Package:</label>
+    <labelแพ็คเกจ:</label>
      <select id="setpackage_package">
         <option value="">Default package. (ID: <%= settings.packages.default %>)</option>
         <% for (let [ id, info ] of Object.entries(settings.packages.list)) { %>
             <option value="<%= id %>"><%= info.display %> (ID: <%= id %>) | Memory: <%= info.memory %>MB, Disk: <%= info.disk %>, CPU: <%= info.cpu %>, Servers: <%= info.servers %></option>
         <% } %>
     </select><br>
-    <button onclick="asyncAlert(setPackage(document.getElementById('setpackage_id').value, document.getElementById('setpackage_package').value.length == 0 ? null : document.getElementById('setpackage_package').value))">Set</button>
+    <button onclick="asyncAlert(setPackage(document.getElementById('setpackage_id').value, document.getElementById('setpackage_package').value.length == 0 ? null : document.getElementById('setpackage_package').value))">ตั้งค่า</button>
 </p>
 
-<h3>Set extra resources</h3>
-<p>Be careful when using this tool. The user might lose their extra resources from leaving a J4R server. Since resources can't become negatives, if their resources is supposed to go under zero, their resources will just be set to 0.</p>
+<h3>ตั้งค่าทรัพยากรเพิ่มเติม</h3>
+<p>โปรดใช้ความระมัดระวังเมื่อใช้เครื่องมือนี้ ผู้ใช้อาจสูญเสียทรัพยากรเพิ่มเติมจากการออกจากเซิร์ฟเวอร์ J4R เนื่องจากทรัพยากรไม่สามารถกลายเป็นค่าลบได้ หากทรัพยากรควรจะเหลือน้อยกว่าศูนย์ ทรัพยากรก็จะถูกตั้งค่าเป็น 0</p>
 <p>
-    <label>Discord ID:</label>
+    <label>ไอดีดิสคอร์ด</label>
      <input id="setresources_id">
-     <label>Memory:</label>
+     <label>หน่วยความจำ:</label>
      <input id="setresources_memory">
-    <label>Disk:</label>
+    <label>ดิสก์:</label>
      <input id="setresources_disk">
-    <label>CPU:</label>
+    <label>ซีพียู:</label>
      <input id="setresources_cpu">
-    <label>Servers:</label>
+    <label>จำนวนเซิร์ฟเวอร์:</label>
      <input id="setresources_servers"><br>
-    <button onclick="asyncAlert(setResources(document.getElementById('setresources_id').value, parseFloat(document.getElementById('setresources_memory').value), parseFloat(document.getElementById('setresources_disk').value), parseFloat(document.getElementById('setresources_cpu').value), parseFloat(document.getElementById('setresources_servers').value), true))">Add</button>
-    <button onclick="asyncAlert(setResources(document.getElementById('setresources_id').value, parseFloat(document.getElementById('setresources_memory').value), parseFloat(document.getElementById('setresources_disk').value), parseFloat(document.getElementById('setresources_cpu').value), parseFloat(document.getElementById('setresources_servers').value)))">Set</button>
+    <button onclick="asyncAlert(setResources(document.getElementById('setresources_id').value, parseFloat(document.getElementById('setresources_memory').value), parseFloat(document.getElementById('setresources_disk').value), parseFloat(document.getElementById('setresources_cpu').value), parseFloat(document.getElementById('setresources_servers').value), true))">เพิ่ม</button>
+    <button onclick="asyncAlert(setResources(document.getElementById('setresources_id').value, parseFloat(document.getElementById('setresources_memory').value), parseFloat(document.getElementById('setresources_disk').value), parseFloat(document.getElementById('setresources_cpu').value), parseFloat(document.getElementById('setresources_servers').value)))">ตั้งค่า</button>
 </p>
 
-<h3>Create coupon.</h3>
+<h3>สร้างคูปอง</h3>
 <p>
-    <label>Code:</label>
+    <label>รหัส:</label>
     <input id="createcoupon_code">
-    <label>Coins:</label>
+    <label>เหรียญ:</label>
     <input id="createcoupon_coins">
-    <label>Memory:</label>
+    <label>หน่วยความจำ:</label>
     <input id="createcoupon_memory">
-    <label>Disk:</label>
+    <label>ดิสก์:</label>
     <input id="createcoupon_disk">
-    <label>CPU:</label>
+    <label>ซีพียู:</label>
     <input id="createcoupon_cpu">
-    <label>Servers:</label>
+    <label>จำนวนเซิร์ฟเวอร์:</label>
     <input id="createcoupon_servers"><br>
-    <button onclick="asyncAlert(createCoupon(document.getElementById('createcoupon_code').value, parseFloat(document.getElementById('createcoupon_coins').value), parseFloat(document.getElementById('createcoupon_memory').value), parseFloat(document.getElementById('createcoupon_disk').value), parseFloat(document.getElementById('createcoupon_cpu').value), parseFloat(document.getElementById('createcoupon_servers').value)))">Create</button>
+    <button onclick="asyncAlert(createCoupon(document.getElementById('createcoupon_code').value, parseFloat(document.getElementById('createcoupon_coins').value), parseFloat(document.getElementById('createcoupon_memory').value), parseFloat(document.getElementById('createcoupon_disk').value), parseFloat(document.getElementById('createcoupon_cpu').value), parseFloat(document.getElementById('createcoupon_servers').value)))">สร้าง</button>
 </p>
 
-<h3>Revoke coupon.</h3>
+<h3>ลบคูปอง</h3>
 <p>
-    <label>Code:</label>
+    <label>รหัส:</label>
     <input id="revokecoupon_code"><br>
-    <button onclick="asyncAlert(revokeCoupon(document.getElementById('revokecoupon_code').value));">Revoke</button>
+    <button onclick="asyncAlert(revokeCoupon(document.getElementById('revokecoupon_code').value));">ลบ</button>
 </p>
 
-<h3>Create J4R.</h3>
-<p>You cannot modify or remove a J4R after it has been made. Make sure you have every information correct before creating the J4R.<br>
-Keep in mind you can have multiple J4Rs on the same server.<br>
-Users will need to click "Update user information." after joining the corresponding J4R server.</p>
+<h3>สร้าง J4R</h3>
+<p>คุณไม่สามารถแก้ไขหรือลบ J4R หลังจากสร้างเสร็จแล้ว ตรวจสอบให้แน่ใจว่าคุณมีข้อมูลทุกอย่างถูกต้องก่อนที่จะสร้าง J4R<br>
+โปรดทราบว่าคุณสามารถมี J4R หลายตัวบนเซิร์ฟเวอร์เดียวกันได้<br>
+ผู้ใช้จะต้องคลิก "อัปเดตข้อมูลผู้ใช้" หลังจากเข้าร่วมเซิร์ฟเวอร์ J4R ที่เกี่ยวข้อง</p>
 <p>
-    <label>J4R ID:</label>
+    <label>ไอดี J4R:</label>
     <input id="createj4r_j4rid">
-    <label>Discord Server ID:</label>
+    <label>รหัสเซิร์ฟเวอร์ Discord:</label>
     <input id="createj4r_serverid">
     <label>Expires on X days:</label>
     <input id="createj4r_expiresonindays">
-    <label>Memory:</label>
+    <label>หน่วยความจำ:</label>
     <input id="createj4r_memory">
-    <label>Disk:</label>
+    <label>ดิสก์:</label>
     <input id="createj4r_disk">
-    <label>CPU:</label>
+    <label>ซีพียู:</label>
     <input id="createj4r_cpu">
-    <label>Servers:</label>
+    <label>จำนวนเซิร์ฟเวอร์:</label>
     <input id="createj4r_servers"><br>
-    <button onclick="asyncAlert(createJ4R(document.getElementById('createj4r_j4rid').value, document.getElementById('createj4r_serverid').value, parseFloat(document.getElementById('createj4r_expiresonindays').value), parseFloat(document.getElementById('createj4r_memory').value), parseFloat(document.getElementById('createj4r_disk').value), parseFloat(document.getElementById('createj4r_cpu').value), parseFloat(document.getElementById('createj4r_servers').value)));">Create</button>
+    <button onclick="asyncAlert(createJ4R(document.getElementById('createj4r_j4rid').value, document.getElementById('createj4r_serverid').value, parseFloat(document.getElementById('createj4r_expiresonindays').value), parseFloat(document.getElementById('createj4r_memory').value), parseFloat(document.getElementById('createj4r_disk').value), parseFloat(document.getElementById('createj4r_cpu').value), parseFloat(document.getElementById('createj4r_servers').value)));">สร้าง</button>
 </p>
 
 <script>
