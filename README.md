@@ -12,3 +12,9 @@
 - [x] admin.ejs
 - [x] create_server.ejs
 - [x] dashboard.ejs
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
