@@ -3,14 +3,14 @@
 # Keep in mind decimals will not work. MySQL rounds them up.
 
 website:
-  port: 4440 # The port you want Dashactyl to run on.
+  port: 3000 # The port you want Dashactyl to run on.
   secret: "Enter your session password here." # Make this very secure and complicated.
   secure: false # This option requires https.
 
 discord:
   id: "Enter your Discord OAuth2 ID here."
   secret: "Enter your Discord OAuth2 secret here."
-  callbackpath: "http://localhost:8000/accounts/callback"
+  callbackpath: "http://localhost:3000/accounts/callback"
   prompt: false
 
   token: "Insert your bot token here."
